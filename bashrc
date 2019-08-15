@@ -1,10 +1,4 @@
-set -o vi
-alias oeDir="workDir && cd one-exchange"
-alias 1dir="cd ~/Projects/Work"
-alias 2dir="cd ~/Projects/Work/2"
-alias 3dir="cd ~/Projects/Work/3"
-alias bake="bundle exec rake"
-alias vs="start *.sln"
+#! /bin/bash
 alias merge="git merge"
 alias add="git add -A"
 alias commit="git commit -m"
@@ -19,4 +13,3 @@ alias stash="git stash"
 alias mergetool="git mergetool"
 alias rebase="git rebase"
 alias fetch="git fetch"
-alias sb="sublime_text.exe"

@@ -1,0 +1,26 @@
+[diff]
+    tool = bc3
+    prompt = false
+[merge]
+    tool = bc3
+    keepBackup = false
+[mergetool "bc3"]
+    trustExitCode = true
+    keepTemporaries = false
+    keepBackup = false
+[alias]
+    unstage = reset HEAD
+    co = checkout
+    ci = commit -m
+    s = status
+    com = checkout master
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    lga = log --graph --pretty=oneline --abbrev-commit --decorate --all
+[http]
+    sslverify = false
+[push]
+    default = tracking
+[core]
+    autocrlf = true
+[difftool]
+    prompt = false
