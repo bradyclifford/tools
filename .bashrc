@@ -20,8 +20,8 @@ alias fetch="git fetch"
 # Terraform
 alias tfi='terraform init'
 alias tfv='terraform validate'
-alias tfp='terraform plan -var="pagerduty_token=ot2oDz1HEnsChPxfFx1y"'
-alias tfa='terraform apply -var="pagerduty_token=ot2oDz1HEnsChPxfFx1y"'
-alias tfr='terraform refresh -var="pagerduty_token=ot2oDz1HEnsChPxfFx1y"'
+alias tfp='terraform plan -var="pagerduty_token=xxxxx"'
+alias tfa='terraform apply -var="pagerduty_token=xxxxx"'
+alias tfr='terraform refresh -var="pagerduty_token=xxxxx"'
 alias tfm='terraform fmt --recursive'
 
