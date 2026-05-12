@@ -17,6 +17,8 @@ Use oh-my-zsh setup guide in Wiki to install
 
 ## Steps in WSL
 - Update distro: `sudo apt update && sudo apt upgrade -y`
+- Setup Oh My Zsh
+  - https://github.com/ohmyzsh/ohmyzsh
 - Install HomeBrew
 
 ### Add Company Root Certificate
