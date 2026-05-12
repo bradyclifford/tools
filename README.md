@@ -26,6 +26,7 @@ Install-WindowsFeature RSAT-AD-PowerShell
 - Setup Oh My Zsh (install first so the evals are added to .zshrc correctly)
   - https://github.com/ohmyzsh/ohmyzsh
 - Install HomeBrew
+- Install PowerShell
 
 ### Updating to Git repo
 
