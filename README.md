@@ -15,11 +15,24 @@
 - Add WTW Certificate to WSL: 
 Use oh-my-zsh setup guide in Wiki to install
 
+### Install Active Directory Users and Computers
+```
+Add-WindowsCapability -Online -Name Rsat.ActiveDirectory.DS-LDS.Tools~~~~0.0.1.0
+Install-WindowsFeature RSAT-AD-PowerShell
+```
+
 ## Steps in WSL
 - Update distro: `sudo apt update && sudo apt upgrade -y`
 - Setup Oh My Zsh (install first so the evals are added to .zshrc correctly)
   - https://github.com/ohmyzsh/ohmyzsh
 - Install HomeBrew
+
+### Updating to Git repo
+
+```
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt update; sudo apt install git -y
+```
 
 ### Add Company Root Certificate
 
