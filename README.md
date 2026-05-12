@@ -22,6 +22,7 @@ Use oh-my-zsh setup guide in Wiki to install
 ### Add Company Root Certificate
 
 _Example_
+
 <img width="382" height="229" alt="image" src="https://github.com/user-attachments/assets/fe0a78a9-c45d-414d-9786-abfad5a7a6a8" />
 
 ```bash
