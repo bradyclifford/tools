@@ -9,6 +9,7 @@
 - Install Docker as personal install after WSL is setup.
 - Install coco
 - Upgrade to latest PowerShell
+- Install real winget (see below)
 - Install Posh-Git
   - Add to all profiles: `Install-Module posh-git -Scope CurrentUser -Force`
 - Add new SSH key to GitHub: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#platform-windows
@@ -54,3 +55,27 @@ sudo update-ca-certificates
   - Setup shell integration (see instructions)
 - Terraform https://tofuutils.github.io/tenv/
   - Setup shell integration (see instructions)
+ 
+### Real Winget
+
+```bash
+#region Install Winget
+# get latest download url
+$URL = "https://api.github.com/repos/microsoft/winget-cli/releases/latest"
+$URL = (Invoke-WebRequest -Uri $URL).Content | ConvertFrom-Json |
+        Select-Object -ExpandProperty "assets" |
+        Where-Object "browser_download_url" -Match '.msixbundle' |
+        Select-Object -ExpandProperty "browser_download_url"
+# download
+Invoke-WebRequest -Uri $URL -OutFile "Setup.msix" -UseBasicParsing
+# install
+Add-AppxPackage -Path "Setup.msix"
+# delete file
+Remove-Item "Setup.msix"
+
+winget --version
+
+# Fix winget sources.
+Add-AppxPackage -Path https://cdn.winget.microsoft.com/cache/source.msix
+#endregion
+```
