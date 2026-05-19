@@ -51,11 +51,24 @@ sudo update-ca-certificates
 
 ## Tools
 
-- Node https://github.com/Schniz/fnm
-  - Setup shell integration (see instructions)
 - Terraform https://tofuutils.github.io/tenv/
   - Setup shell integration (see instructions)
  
+### Node - fnm
+
+https://github.com/Schniz/fnm
+
+```
+``
+fnm install --lts
+fnm default lts-latest
+``
+
+Then in ~/.zshrc:
+```
+eval "$(fnm env --use-on-cd)"
+```
+
 ### Real Winget
 
 ```bash
