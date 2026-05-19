@@ -10,7 +10,7 @@
 - Install coco
 - Upgrade to latest PowerShell
 - Install Posh-Git
-  - Add to all profiles: `Add-PoshGitToProfile -AllHosts`
+  - Add to all profiles: `Install-Module posh-git -Scope CurrentUser -Force`
 - Add new SSH key to GitHub: https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#platform-windows
 - Add WTW Certificate to WSL: 
 Use oh-my-zsh setup guide in Wiki to install
