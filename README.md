@@ -92,3 +92,37 @@ winget --version
 Add-AppxPackage -Path https://cdn.winget.microsoft.com/cache/source.msix
 #endregion
 ```
+
+# SSH Setup
+## WSL - ZSH
+
+- zsh plugin → manages agent lifecycle
+- ssh config → decides which key to use
+- AddKeysToAgent → loads key when used
+- lazy → delays everything until needed
+
+`.zshrc`
+
+```
+zstyle :omz:plugins:ssh-agent lazy yes
+zstyle :omz:plugins:ssh-agent identities id_github_personal id_github_work
+zstyle :omz:plugins:ssh-agent quiet yes
+
+plugins=(git ssh-agent)
+```
+
+`~/.ssh/config`
+
+```
+Host github.com-personal
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_github_personal
+  AddKeysToAgent yes
+
+Host github.com-work
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_github_work
+  AddKeysToAgent yes
+```
