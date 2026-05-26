@@ -94,6 +94,10 @@ Add-AppxPackage -Path https://cdn.winget.microsoft.com/cache/source.msix
 ```
 
 # SSH Setup
+
+Use same SSH key for both signing and auth.
+No password for work SSH.  Password for personal SSH.
+
 ## WSL - ZSH
 
 - zsh plugin → manages agent lifecycle
@@ -126,3 +130,38 @@ Host github.com-work
   IdentityFile ~/.ssh/id_github_work
   AddKeysToAgent yes
 ```
+
+### Windows
+
+Use same ssh keys.
+
+```
+# Personal GitHub
+Host github-personal
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_github_personal
+  IdentitiesOnly yes
+  AddKeysToAgent yes
+
+# Work GitHub
+Host github-work
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_github_work
+  IdentitiesOnly yes
+  AddKeysToAgent yes
+```
+
+Enable ssh-agent on Windows
+```
+Get-Service ssh-agent | Set-Service -StartupType Automatic
+Start-Service ssh-agent
+```
+
+Add keys (one-time setup)
+```
+ssh-add ~/.ssh/id_github_work
+ssh-add ~/.ssh/id_github_personal
+```
+
